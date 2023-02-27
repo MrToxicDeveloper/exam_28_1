@@ -68,6 +68,10 @@ class _HomePageState extends State<HomePage> {
                         border: Border.all(width: 1.5, color: Colors.red),
                       ),
                       alignment: Alignment.center,
+                      child: ListView.builder(
+                        itemBuilder: (context, index) => Answer(Num, index),
+                        itemCount: 10,
+                      ),
                     ),
                   ),
                 ),
@@ -80,7 +84,8 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () {
                       setState(() {
                         Num = int.parse(Table.text);
-                        Call(Num);
+                        // Call(Num);
+                        print("10");
                       });
                     },
                     style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.red)),
@@ -101,12 +106,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget Call(int num) {
-    return ListView.builder(
-      itemBuilder: (context, index) => Answer(num, index),
-      itemCount: 10,
-    );
-  }
+  // Widget Call(int num) {
+  //   return
+  // }
 
   Widget Answer(int num, int i) {
     return Row(
